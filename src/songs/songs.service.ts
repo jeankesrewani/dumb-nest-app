@@ -1,18 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import Song from './song.interface';
+import SongInterface from './song.interface';
 
 @Injectable()
 export class SongsService {
-  private readonly songs: Song[] = [
+  private readonly songs: SongInterface[] = [
     { id: 1, name: 'run to the hills' },
     { id: 2, name: 'hallowed be thy name' },
   ];
 
   findAll(): string[] {
-    return this.songs.map((songObj: Song) => songObj.name);
+    return this.songs.map((songObj: SongInterface) => songObj.name);
   }
 
   findNameById(id: number): string {
-    return this.songs.filter((songObj: Song) => songObj.id == id)[0]?.name;
+    return this.songs.filter((songObj: SongInterface) => songObj.id == id)[0]
+      ?.name;
   }
 }

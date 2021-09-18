@@ -14,7 +14,13 @@ describe('SongsController', () => {
     controller = module.get<SongsController>(SongsController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  describe('root', () => {
+    it('should be defined', () => {
+      expect(controller).toBeDefined();
+    });
+
+    it('should return run to the hills', () => {
+      expect(controller.findNameById({ id: 1 })).toBe('run to the hills');
+    });
   });
 });

@@ -1,5 +1,5 @@
-interface Song {
+interface SongInterface {
   id: number;
   name: string;
 }
-export default Song;
+export default SongInterface;
